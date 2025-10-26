@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAddProduct = new Guna.UI2.WinForms.Guna2Button();
             this.btnEditProduct = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteProduct = new Guna.UI2.WinForms.Guna2Button();
@@ -49,6 +49,8 @@
             this.pictureBoxProduct = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblProductId = new System.Windows.Forms.Label();
             this.txtProductId = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +65,7 @@
             this.btnAddProduct.FillColor = System.Drawing.Color.RosyBrown;
             this.btnAddProduct.Font = new System.Drawing.Font("TA Chailai", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnAddProduct.ForeColor = System.Drawing.Color.White;
-            this.btnAddProduct.Location = new System.Drawing.Point(153, 447);
+            this.btnAddProduct.Location = new System.Drawing.Point(164, 500);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(154, 52);
             this.btnAddProduct.TabIndex = 1;
@@ -80,7 +82,7 @@
             this.btnEditProduct.FillColor = System.Drawing.Color.RosyBrown;
             this.btnEditProduct.Font = new System.Drawing.Font("TA Chailai", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnEditProduct.ForeColor = System.Drawing.Color.White;
-            this.btnEditProduct.Location = new System.Drawing.Point(638, 447);
+            this.btnEditProduct.Location = new System.Drawing.Point(649, 500);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(154, 52);
             this.btnEditProduct.TabIndex = 2;
@@ -97,7 +99,7 @@
             this.btnDeleteProduct.FillColor = System.Drawing.Color.RosyBrown;
             this.btnDeleteProduct.Font = new System.Drawing.Font("TA Chailai", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnDeleteProduct.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteProduct.Location = new System.Drawing.Point(385, 447);
+            this.btnDeleteProduct.Location = new System.Drawing.Point(396, 500);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Size = new System.Drawing.Size(154, 52);
             this.btnDeleteProduct.TabIndex = 3;
@@ -112,6 +114,7 @@
             this.ds.Name = "ds";
             this.ds.Size = new System.Drawing.Size(3, 2);
             this.ds.TabIndex = 8;
+            this.ds.Text = null;
             this.ds.Click += new System.EventHandler(this.lblTitle_Click);
             // 
             // txtName
@@ -151,7 +154,7 @@
             "ขนมปังยุโรป (Artisan Breads)",
             "ปาทิสเซอรี (Pâtisserie)",
             "แซนด์วิช / ของคาว (Sandwich & Savory)"});
-            this.cmbCategory.Location = new System.Drawing.Point(260, 262);
+            this.cmbCategory.Location = new System.Drawing.Point(260, 230);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(550, 36);
             this.cmbCategory.TabIndex = 10;
@@ -170,7 +173,7 @@
             this.txtPrice.Font = new System.Drawing.Font("TA Chailai", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.ForeColor = System.Drawing.Color.White;
             this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrice.Location = new System.Drawing.Point(294, 349);
+            this.txtPrice.Location = new System.Drawing.Point(260, 167);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PlaceholderText = "";
@@ -192,7 +195,7 @@
             this.txtStock.Font = new System.Drawing.Font("TA Chailai", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStock.ForeColor = System.Drawing.Color.White;
             this.txtStock.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStock.Location = new System.Drawing.Point(618, 352);
+            this.txtStock.Location = new System.Drawing.Point(603, 168);
             this.txtStock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtStock.Name = "txtStock";
             this.txtStock.PlaceholderText = "";
@@ -203,33 +206,34 @@
             // 
             // dataGridProducts
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dataGridProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dataGridProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridProducts.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridProducts.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridProducts.ColumnHeadersHeight = 4;
+            this.dataGridProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridProducts.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridProducts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridProducts.Location = new System.Drawing.Point(91, 526);
+            this.dataGridProducts.Location = new System.Drawing.Point(117, 558);
             this.dataGridProducts.Name = "dataGridProducts";
             this.dataGridProducts.RowHeadersVisible = false;
             this.dataGridProducts.RowHeadersWidth = 51;
             this.dataGridProducts.RowTemplate.Height = 24;
-            this.dataGridProducts.Size = new System.Drawing.Size(1396, 388);
+            this.dataGridProducts.Size = new System.Drawing.Size(1244, 333);
             this.dataGridProducts.TabIndex = 13;
             this.dataGridProducts.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridProducts.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -242,7 +246,7 @@
             this.dataGridProducts.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridProducts.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridProducts.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dataGridProducts.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridProducts.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dataGridProducts.ThemeStyle.HeaderStyle.Height = 4;
             this.dataGridProducts.ThemeStyle.ReadOnly = false;
             this.dataGridProducts.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -281,7 +285,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("TA Chailai", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(110, 351);
+            this.lblPrice.Location = new System.Drawing.Point(110, 167);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(62, 41);
             this.lblPrice.TabIndex = 16;
@@ -291,7 +295,7 @@
             // 
             this.lblCategory.AutoSize = true;
             this.lblCategory.Font = new System.Drawing.Font("TA Chailai", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategory.Location = new System.Drawing.Point(90, 257);
+            this.lblCategory.Location = new System.Drawing.Point(84, 225);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(97, 41);
             this.lblCategory.TabIndex = 17;
@@ -301,7 +305,7 @@
             // 
             this.lblStock.AutoSize = true;
             this.lblStock.Font = new System.Drawing.Font("TA Chailai", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.Location = new System.Drawing.Point(525, 352);
+            this.lblStock.Location = new System.Drawing.Point(485, 168);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(87, 41);
             this.lblStock.TabIndex = 18;
@@ -317,7 +321,7 @@
             this.btnSelectImage.FillColor = System.Drawing.Color.RosyBrown;
             this.btnSelectImage.Font = new System.Drawing.Font("TA Chailai", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnSelectImage.ForeColor = System.Drawing.Color.White;
-            this.btnSelectImage.Location = new System.Drawing.Point(938, 447);
+            this.btnSelectImage.Location = new System.Drawing.Point(949, 500);
             this.btnSelectImage.Name = "btnSelectImage";
             this.btnSelectImage.Size = new System.Drawing.Size(184, 52);
             this.btnSelectImage.TabIndex = 19;
@@ -328,7 +332,7 @@
             // 
             this.pictureBoxProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxProduct.ImageRotate = 0F;
-            this.pictureBoxProduct.Location = new System.Drawing.Point(910, 186);
+            this.pictureBoxProduct.Location = new System.Drawing.Point(1061, 198);
             this.pictureBoxProduct.Name = "pictureBoxProduct";
             this.pictureBoxProduct.Size = new System.Drawing.Size(242, 253);
             this.pictureBoxProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -340,7 +344,7 @@
             // 
             this.lblProductId.AutoSize = true;
             this.lblProductId.Font = new System.Drawing.Font("TA Chailai", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductId.Location = new System.Drawing.Point(90, 186);
+            this.lblProductId.Location = new System.Drawing.Point(75, 285);
             this.lblProductId.Name = "lblProductId";
             this.lblProductId.Size = new System.Drawing.Size(106, 41);
             this.lblProductId.TabIndex = 21;
@@ -359,7 +363,7 @@
             this.txtProductId.Font = new System.Drawing.Font("TA Chailai", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductId.ForeColor = System.Drawing.Color.Black;
             this.txtProductId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtProductId.Location = new System.Drawing.Point(260, 186);
+            this.txtProductId.Location = new System.Drawing.Point(260, 284);
             this.txtProductId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProductId.Name = "txtProductId";
             this.txtProductId.PlaceholderText = "";
@@ -369,12 +373,48 @@
             this.txtProductId.TabIndex = 22;
             this.txtProductId.TextChanged += new System.EventHandler(this.txtProductId_TextChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("TA Chailai", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(75, 345);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 41);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "คำอธิบาย";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDescription.DefaultText = "";
+            this.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDescription.FillColor = System.Drawing.Color.IndianRed;
+            this.txtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDescription.Font = new System.Drawing.Font("TA Chailai", 12F, System.Drawing.FontStyle.Bold);
+            this.txtDescription.ForeColor = System.Drawing.Color.Black;
+            this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDescription.Location = new System.Drawing.Point(260, 344);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDescription.MinimumSize = new System.Drawing.Size(350, 60);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.PlaceholderText = "";
+            this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDescription.SelectedText = "";
+            this.txtDescription.Size = new System.Drawing.Size(350, 60);
+            this.txtDescription.TabIndex = 24;
+            // 
             // ProductPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.ClientSize = new System.Drawing.Size(1557, 903);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtProductId);
             this.Controls.Add(this.lblProductId);
             this.Controls.Add(this.pictureBoxProduct);
@@ -395,6 +435,7 @@
             this.Controls.Add(this.btnAddProduct);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProductPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductPage";
             this.Load += new System.EventHandler(this.ProductPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).EndInit();
@@ -423,5 +464,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox pictureBoxProduct;
         private System.Windows.Forms.Label lblProductId;
         private Guna.UI2.WinForms.Guna2TextBox txtProductId;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2TextBox txtDescription;
     }
 }

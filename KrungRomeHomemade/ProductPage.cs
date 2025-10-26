@@ -33,6 +33,7 @@ namespace KrungRomeHomemade
             dataGridProducts.Columns.Add("category", "หมวดหมู่");
             dataGridProducts.Columns.Add("price", "ราคา (บาท)");
             dataGridProducts.Columns.Add("stock", "คงเหลือ");
+            dataGridProducts.Columns.Add("description", "คำอธิบายสินค้า");
 
             DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
             imgCol.Name = "image";
@@ -166,12 +167,14 @@ namespace KrungRomeHomemade
 
                                 // 🔄 อัปเดตสินค้าเดิม
                                 string updateSql = @"UPDATE products 
-                                    SET product_id=@id,
-                                        category=@category,
-                                        price=@price,
-                                        stock=@stock,
-                                        image=@image 
-                                       WHERE TRIM(LOWER(name)) = LOWER(@name)";
+                                         SET product_id=@id,
+                                             category=@category,
+                                             price=@price,
+                                             stock=@stock,
+                                             image=@image,
+                                             description=@desc
+                                         WHERE TRIM(LOWER(name)) = LOWER(@name)";
+
 
                                 using (var cmd = new MySqlCommand(updateSql, conn))
                                 {
@@ -181,6 +184,7 @@ namespace KrungRomeHomemade
                                     cmd.Parameters.AddWithValue("@price", price);
                                     cmd.Parameters.AddWithValue("@stock", stock);
                                     cmd.Parameters.AddWithValue("@image", imgBytes);
+                                    cmd.Parameters.AddWithValue("@desc", txtDescription.Text.Trim());
                                     cmd.ExecuteNonQuery();
                                 }
 
@@ -217,8 +221,9 @@ namespace KrungRomeHomemade
                                 }
                             }
 
-                            string insertSql = @"INSERT INTO products (product_id, name, category, price, stock, image)
-                                         VALUES (@id, @name, @category, @price, @stock, @image)";
+                            string insertSql = @"INSERT INTO products (product_id, name, category, price, stock, image, description)
+                                                VALUES (@id, @name, @category, @price, @stock, @image, @desc)";
+
                             using (var cmd = new MySqlCommand(insertSql, conn))
                             {
                                 cmd.Parameters.AddWithValue("@id", newProductId);
@@ -227,6 +232,7 @@ namespace KrungRomeHomemade
                                 cmd.Parameters.AddWithValue("@price", price);
                                 cmd.Parameters.AddWithValue("@stock", stock);
                                 cmd.Parameters.AddWithValue("@image", imgBytes);
+                                cmd.Parameters.AddWithValue("@desc", txtDescription.Text.Trim());
                                 cmd.ExecuteNonQuery();
                             }
 
@@ -565,6 +571,7 @@ namespace KrungRomeHomemade
                 cmbCategory.Text = row.Cells["category"].Value?.ToString();
                 txtPrice.Text = row.Cells["price"].Value?.ToString();
                 txtStock.Text = row.Cells["stock"].Value?.ToString();
+                txtDescription.Text = row.Cells["description"].Value?.ToString();
 
                 if (row.Cells["image"].Value is Image img)
                 {
@@ -659,7 +666,7 @@ namespace KrungRomeHomemade
                 {
                     conn.Open();
 
-                    string sql = "SELECT product_id, name, category, price, stock, image FROM products ORDER BY product_id ASC";
+                    string sql = "SELECT product_id, name, category, price, stock, image, description FROM products ORDER BY product_id ASC";
 
                     using (var cmd = new MySqlCommand(sql, conn))
                     using (var rd = cmd.ExecuteReader())
@@ -667,16 +674,15 @@ namespace KrungRomeHomemade
                         while (rd.Read())
                         {
                             Image img = BytesToImage(rd["image"]);
-
-                            // 🟢 ใช้รหัสจริงจากฐานข้อมูล
-                            string productId = rd["product_id"].ToString();
+                            string desc = rd["description"]?.ToString();
 
                             dataGridProducts.Rows.Add(
-                                productId,
+                                rd["product_id"].ToString(),
                                 rd["name"].ToString(),
                                 rd["category"].ToString(),
                                 rd["price"].ToString(),
                                 rd["stock"].ToString(),
+                                desc,     // ✅ เพิ่ม description ตรงนี้
                                 img
                             );
                         }
