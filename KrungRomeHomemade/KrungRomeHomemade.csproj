@@ -257,5 +257,41 @@
   <ItemGroup>
     <None Include="Resources\LOGO Krung Rome Homemade.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO Krung Rome Homemade1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ค้นหา.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ค้นหา1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Viennoiserie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Artisan Breads.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pâtisserie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sandwich &amp; Savory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ตะกร้า.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ผู้ใช้.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO Krung Rome Homemade2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO Krung Rome Homemade21.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

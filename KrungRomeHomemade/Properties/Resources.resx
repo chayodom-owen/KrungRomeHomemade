@@ -121,6 +121,15 @@
   <data name="5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LOGO Krung Rome Homemade1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGO Krung Rome Homemade1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Artisan Breads" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Artisan Breads.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sandwich &amp; Savory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sandwich &amp; Savory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Dashbord" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dashbord.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,8 +139,8 @@
   <data name="Dashbord1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dashbord1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="report" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ผู้ใช้" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ผู้ใช้.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Order" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Order.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,14 +151,26 @@
   <data name="Forgot_password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Forgot_password.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Order1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Order1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Viennoiserie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Viennoiserie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ตะกร้า" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ตะกร้า.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Product1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Product.png1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Product.png" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Product.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LOGO Krung Rome Homemade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGO Krung Rome Homemade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ค้นหา" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ค้นหา.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pâtisserie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pâtisserie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Create Account" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Create Account.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,7 +178,22 @@
   <data name="Krung Rome Homemade (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Krung Rome Homemade (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LOGO Krung Rome Homemade" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGO Krung Rome Homemade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Product.png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Product.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="report" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LOGO Krung Rome Homemade2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGO Krung Rome Homemade2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ค้นหา1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ค้นหา1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Order1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Order1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LOGO Krung Rome Homemade21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGO Krung Rome Homemade21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

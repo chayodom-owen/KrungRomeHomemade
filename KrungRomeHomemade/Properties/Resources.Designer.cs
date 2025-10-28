@@ -73,6 +73,16 @@ namespace KrungRomeHomemade.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Artisan_Breads {
+            get {
+                object obj = ResourceManager.GetObject("Artisan Breads", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Create_Account {
             get {
                 object obj = ResourceManager.GetObject("Create Account", resourceCulture);
@@ -143,6 +153,36 @@ namespace KrungRomeHomemade.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LOGO_Krung_Rome_Homemade1 {
+            get {
+                object obj = ResourceManager.GetObject("LOGO Krung Rome Homemade1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGO_Krung_Rome_Homemade2 {
+            get {
+                object obj = ResourceManager.GetObject("LOGO Krung Rome Homemade2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGO_Krung_Rome_Homemade21 {
+            get {
+                object obj = ResourceManager.GetObject("LOGO Krung Rome Homemade21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Order {
             get {
                 object obj = ResourceManager.GetObject("Order", resourceCulture);
@@ -156,6 +196,16 @@ namespace KrungRomeHomemade.Properties {
         internal static System.Drawing.Bitmap Order1 {
             get {
                 object obj = ResourceManager.GetObject("Order1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pâtisserie {
+            get {
+                object obj = ResourceManager.GetObject("Pâtisserie", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +246,76 @@ namespace KrungRomeHomemade.Properties {
         internal static System.Drawing.Bitmap report1 {
             get {
                 object obj = ResourceManager.GetObject("report1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sandwich___Savory {
+            get {
+                object obj = ResourceManager.GetObject("Sandwich & Savory", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user {
+            get {
+                object obj = ResourceManager.GetObject("user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Viennoiserie {
+            get {
+                object obj = ResourceManager.GetObject("Viennoiserie", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ค้นหา {
+            get {
+                object obj = ResourceManager.GetObject("ค้นหา", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ค้นหา1 {
+            get {
+                object obj = ResourceManager.GetObject("ค้นหา1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ตะกร้า {
+            get {
+                object obj = ResourceManager.GetObject("ตะกร้า", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ผู้ใช้ {
+            get {
+                object obj = ResourceManager.GetObject("ผู้ใช้", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
