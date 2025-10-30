@@ -50,9 +50,9 @@
             this.PanelMenu.Controls.Add(this.btnReport);
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
-            this.PanelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PanelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(262, 687);
+            this.PanelMenu.Size = new System.Drawing.Size(349, 846);
             this.PanelMenu.TabIndex = 0;
             this.PanelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelMenu_Paint);
             // 
@@ -73,11 +73,11 @@
             this.Close.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.Close.HoverState.FillColor = System.Drawing.Color.GhostWhite;
             this.Close.HoverState.ForeColor = System.Drawing.Color.IndianRed;
-            this.Close.Location = new System.Drawing.Point(0, 650);
-            this.Close.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Close.Location = new System.Drawing.Point(0, 800);
+            this.Close.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Close.Name = "Close";
             this.Close.PressedColor = System.Drawing.Color.Transparent;
-            this.Close.Size = new System.Drawing.Size(262, 37);
+            this.Close.Size = new System.Drawing.Size(349, 46);
             this.Close.TabIndex = 8;
             this.Close.Text = "X";
             this.Close.Click += new System.EventHandler(this.Close_Click);
@@ -101,12 +101,12 @@
             this.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnDashboard.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnDashboard.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnDashboard.Location = new System.Drawing.Point(-42, 269);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDashboard.Location = new System.Drawing.Point(-56, 331);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.btnDashboard.Padding = new System.Windows.Forms.Padding(0, 0, 11, 0);
             this.btnDashboard.PressedColor = System.Drawing.Color.BlanchedAlmond;
-            this.btnDashboard.Size = new System.Drawing.Size(262, 63);
+            this.btnDashboard.Size = new System.Drawing.Size(349, 78);
             this.btnDashboard.TabIndex = 6;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -131,12 +131,12 @@
             this.btnOrder.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnOrder.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnOrder.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnOrder.Location = new System.Drawing.Point(-42, 117);
-            this.btnOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOrder.Location = new System.Drawing.Point(-56, 144);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.btnOrder.Padding = new System.Windows.Forms.Padding(0, 0, 11, 0);
             this.btnOrder.PressedColor = System.Drawing.Color.BlanchedAlmond;
-            this.btnOrder.Size = new System.Drawing.Size(262, 63);
+            this.btnOrder.Size = new System.Drawing.Size(349, 78);
             this.btnOrder.TabIndex = 5;
             this.btnOrder.Text = "Order";
             this.btnOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -161,12 +161,12 @@
             this.btnProduct.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnProduct.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnProduct.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnProduct.Location = new System.Drawing.Point(-42, 193);
-            this.btnProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProduct.Location = new System.Drawing.Point(-56, 238);
+            this.btnProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.btnProduct.Padding = new System.Windows.Forms.Padding(0, 0, 11, 0);
             this.btnProduct.PressedColor = System.Drawing.Color.BlanchedAlmond;
-            this.btnProduct.Size = new System.Drawing.Size(262, 63);
+            this.btnProduct.Size = new System.Drawing.Size(349, 78);
             this.btnProduct.TabIndex = 4;
             this.btnProduct.Text = "Product";
             this.btnProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -191,11 +191,11 @@
             this.btnReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnReport.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnReport.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnReport.Location = new System.Drawing.Point(-42, 41);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReport.Location = new System.Drawing.Point(-56, 50);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReport.Name = "btnReport";
             this.btnReport.PressedColor = System.Drawing.Color.BlanchedAlmond;
-            this.btnReport.Size = new System.Drawing.Size(262, 63);
+            this.btnReport.Size = new System.Drawing.Size(349, 78);
             this.btnReport.TabIndex = 3;
             this.btnReport.Text = "Report";
             this.btnReport.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -205,10 +205,10 @@
             // 
             this.PanelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(208)))), ((int)(((byte)(172)))));
             this.PanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelMain.Location = new System.Drawing.Point(262, 0);
-            this.PanelMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PanelMain.Location = new System.Drawing.Point(349, 0);
+            this.PanelMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelMain.Name = "PanelMain";
-            this.PanelMain.Size = new System.Drawing.Size(893, 687);
+            this.PanelMain.Size = new System.Drawing.Size(1433, 846);
             this.PanelMain.TabIndex = 1;
             this.PanelMain.TabStop = true;
             this.PanelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelMain_Paint);
@@ -220,12 +220,12 @@
             // 
             // Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 687);
+            this.ClientSize = new System.Drawing.Size(1782, 846);
             this.Controls.Add(this.PanelMain);
             this.Controls.Add(this.PanelMenu);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Admin";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

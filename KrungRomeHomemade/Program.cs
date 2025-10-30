@@ -16,7 +16,7 @@ namespace KrungRomeHomemade
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Admin()); // ✅ ใช้ชื่อฟอร์มให้ตรงกับไฟล์ LoginForm.cs
+            Application.Run(new CartPage()); // ✅ ใช้ชื่อฟอร์มให้ตรงกับไฟล์ LoginForm.cs
         }
     }
 }

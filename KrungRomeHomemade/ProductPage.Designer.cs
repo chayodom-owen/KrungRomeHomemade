@@ -332,7 +332,7 @@
             this.btnSelectImage.FillColor = System.Drawing.Color.RosyBrown;
             this.btnSelectImage.Font = new System.Drawing.Font("TA Chailai", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnSelectImage.ForeColor = System.Drawing.Color.White;
-            this.btnSelectImage.Location = new System.Drawing.Point(712, 406);
+            this.btnSelectImage.Location = new System.Drawing.Point(820, 379);
             this.btnSelectImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSelectImage.Name = "btnSelectImage";
             this.btnSelectImage.Size = new System.Drawing.Size(138, 42);

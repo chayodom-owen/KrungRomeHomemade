@@ -32,13 +32,14 @@
             this.panelMain = new Guna.UI2.WinForms.Guna2Panel();
             this.flowProducts = new System.Windows.Forms.FlowLayoutPanel();
             this.panelCategory = new Guna.UI2.WinForms.Guna2Panel();
-            this.panelTopห = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelTop = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnAll = new Guna.UI2.WinForms.Guna2Button();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSS = new Guna.UI2.WinForms.Guna2Button();
             this.btnPA = new Guna.UI2.WinForms.Guna2Button();
             this.btnAB = new Guna.UI2.WinForms.Guna2Button();
             this.btnVN = new Guna.UI2.WinForms.Guna2Button();
@@ -49,7 +50,7 @@
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelMain.SuspendLayout();
             this.panelCategory.SuspendLayout();
-            this.panelTopห.SuspendLayout();
+            this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -59,13 +60,13 @@
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(243)))), ((int)(((byte)(238)))));
             this.panelMain.Controls.Add(this.flowProducts);
             this.panelMain.Controls.Add(this.panelCategory);
-            this.panelMain.Controls.Add(this.panelTopห);
+            this.panelMain.Controls.Add(this.panelTop);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
             this.panelMain.ShadowDecoration.BorderRadius = 62;
-            this.panelMain.Size = new System.Drawing.Size(1484, 711);
+            this.panelMain.Size = new System.Drawing.Size(1484, 687);
             this.panelMain.TabIndex = 3;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
@@ -74,7 +75,7 @@
             this.flowProducts.AutoScroll = true;
             this.flowProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(239)))));
             this.flowProducts.Location = new System.Drawing.Point(0, 243);
-            this.flowProducts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowProducts.Margin = new System.Windows.Forms.Padding(2);
             this.flowProducts.Name = "flowProducts";
             this.flowProducts.Padding = new System.Windows.Forms.Padding(40, 20, 40, 20);
             this.flowProducts.Size = new System.Drawing.Size(1484, 518);
@@ -84,42 +85,64 @@
             // panelCategory
             // 
             this.panelCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(250)))), ((int)(((byte)(246)))));
-            this.panelCategory.Controls.Add(this.guna2Button1);
+            this.panelCategory.Controls.Add(this.btnSS);
             this.panelCategory.Controls.Add(this.btnPA);
             this.panelCategory.Controls.Add(this.btnAB);
             this.panelCategory.Controls.Add(this.btnVN);
             this.panelCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(247)))));
             this.panelCategory.Location = new System.Drawing.Point(0, 84);
-            this.panelCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelCategory.Margin = new System.Windows.Forms.Padding(2);
             this.panelCategory.Name = "panelCategory";
             this.panelCategory.Size = new System.Drawing.Size(1484, 166);
             this.panelCategory.TabIndex = 1;
             this.panelCategory.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCategory_Paint);
             // 
-            // panelTopห
+            // panelTop
             // 
-            this.panelTopห.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(250)))), ((int)(((byte)(246)))));
-            this.panelTopห.BorderColor = System.Drawing.Color.White;
-            this.panelTopห.Controls.Add(this.guna2Button2);
-            this.panelTopห.Controls.Add(this.btnCart);
-            this.panelTopห.Controls.Add(this.txtSearch);
-            this.panelTopห.Controls.Add(this.btnClose);
-            this.panelTopห.Controls.Add(this.guna2PictureBox1);
-            this.panelTopห.Controls.Add(this.guna2PictureBox3);
-            this.panelTopห.Controls.Add(this.label3);
-            this.panelTopห.Controls.Add(this.label2);
-            this.panelTopห.Controls.Add(this.label1);
-            this.panelTopห.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTopห.Location = new System.Drawing.Point(0, 0);
-            this.panelTopห.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panelTopห.Name = "panelTopห";
-            this.panelTopห.ShadowDecoration.BorderRadius = 20;
-            this.panelTopห.ShadowDecoration.Color = System.Drawing.Color.IndianRed;
-            this.panelTopห.ShadowDecoration.Enabled = true;
-            this.panelTopห.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 5, 5, 20);
-            this.panelTopห.Size = new System.Drawing.Size(1484, 711);
-            this.panelTopห.TabIndex = 0;
-            this.panelTopห.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
+            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(250)))), ((int)(((byte)(246)))));
+            this.panelTop.BorderColor = System.Drawing.Color.White;
+            this.panelTop.Controls.Add(this.btnAll);
+            this.panelTop.Controls.Add(this.guna2Button2);
+            this.panelTop.Controls.Add(this.btnCart);
+            this.panelTop.Controls.Add(this.txtSearch);
+            this.panelTop.Controls.Add(this.btnClose);
+            this.panelTop.Controls.Add(this.guna2PictureBox1);
+            this.panelTop.Controls.Add(this.guna2PictureBox3);
+            this.panelTop.Controls.Add(this.label3);
+            this.panelTop.Controls.Add(this.label2);
+            this.panelTop.Controls.Add(this.label1);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.Location = new System.Drawing.Point(0, 0);
+            this.panelTop.Margin = new System.Windows.Forms.Padding(2);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.ShadowDecoration.BorderRadius = 20;
+            this.panelTop.ShadowDecoration.Color = System.Drawing.Color.IndianRed;
+            this.panelTop.ShadowDecoration.Enabled = true;
+            this.panelTop.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 5, 5, 20);
+            this.panelTop.Size = new System.Drawing.Size(1484, 687);
+            this.panelTop.TabIndex = 0;
+            this.panelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
+            // 
+            // btnAll
+            // 
+            this.btnAll.BorderRadius = 20;
+            this.btnAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAll.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAll.FillColor = System.Drawing.Color.Transparent;
+            this.btnAll.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold);
+            this.btnAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(119)))), ((int)(((byte)(91)))));
+            this.btnAll.HoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAll.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAll.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(60)))), ((int)(((byte)(40)))));
+            this.btnAll.Location = new System.Drawing.Point(1199, 31);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(83, 39);
+            this.btnAll.TabIndex = 22;
+            this.btnAll.Text = "Home";
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
             // btnClose
             // 
@@ -138,7 +161,7 @@
             this.btnClose.HoverState.FillColor = System.Drawing.Color.GhostWhite;
             this.btnClose.HoverState.ForeColor = System.Drawing.Color.IndianRed;
             this.btnClose.Location = new System.Drawing.Point(1414, 26);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.PressedColor = System.Drawing.Color.Transparent;
             this.btnClose.Size = new System.Drawing.Size(59, 41);
@@ -188,35 +211,37 @@
             this.mySqlCommand1.EnableCaching = false;
             this.mySqlCommand1.Transaction = null;
             // 
-            // guna2Button1
+            // btnSS
             // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(200)))), ((int)(((byte)(166)))));
-            this.guna2Button1.BorderRadius = 20;
-            this.guna2Button1.BorderThickness = 2;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(249)))), ((int)(((byte)(244)))));
-            this.guna2Button1.Font = new System.Drawing.Font("TA Chailai", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(79)))), ((int)(((byte)(43)))));
-            this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(164)))), ((int)(((byte)(106)))));
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(227)))));
-            this.guna2Button1.Image = global::KrungRomeHomemade.Properties.Resources.Sandwich___Savory;
-            this.guna2Button1.ImageOffset = new System.Drawing.Point(0, 15);
-            this.guna2Button1.ImageSize = new System.Drawing.Size(50, 50);
-            this.guna2Button1.Location = new System.Drawing.Point(1134, 16);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.BorderRadius = 20;
-            this.guna2Button1.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(191)))), ((int)(((byte)(165)))));
-            this.guna2Button1.ShadowDecoration.Enabled = true;
-            this.guna2Button1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 3, 3, 5);
-            this.guna2Button1.Size = new System.Drawing.Size(276, 130);
-            this.guna2Button1.TabIndex = 8;
-            this.guna2Button1.Text = "Sandwich / Savory";
-            this.guna2Button1.Tile = true;
+            this.btnSS.BackColor = System.Drawing.Color.Transparent;
+            this.btnSS.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(200)))), ((int)(((byte)(166)))));
+            this.btnSS.BorderRadius = 20;
+            this.btnSS.BorderThickness = 2;
+            this.btnSS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSS.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSS.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSS.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(249)))), ((int)(((byte)(244)))));
+            this.btnSS.Font = new System.Drawing.Font("TA Chailai", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(79)))), ((int)(((byte)(43)))));
+            this.btnSS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(164)))), ((int)(((byte)(106)))));
+            this.btnSS.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(227)))));
+            this.btnSS.Image = global::KrungRomeHomemade.Properties.Resources.Sandwich___Savory;
+            this.btnSS.ImageOffset = new System.Drawing.Point(0, 15);
+            this.btnSS.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnSS.Location = new System.Drawing.Point(1134, 16);
+            this.btnSS.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSS.Name = "btnSS";
+            this.btnSS.ShadowDecoration.BorderRadius = 20;
+            this.btnSS.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(191)))), ((int)(((byte)(165)))));
+            this.btnSS.ShadowDecoration.Enabled = true;
+            this.btnSS.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 3, 3, 5);
+            this.btnSS.Size = new System.Drawing.Size(276, 130);
+            this.btnSS.TabIndex = 8;
+            this.btnSS.Text = "Sandwich / Savory";
+            this.btnSS.Tile = true;
+            this.btnSS.Click += new System.EventHandler(this.btnSS_Click);
             // 
             // btnPA
             // 
@@ -224,6 +249,7 @@
             this.btnPA.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(201)))), ((int)(((byte)(166)))));
             this.btnPA.BorderRadius = 20;
             this.btnPA.BorderThickness = 2;
+            this.btnPA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnPA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -255,6 +281,7 @@
             this.btnAB.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(201)))), ((int)(((byte)(166)))));
             this.btnAB.BorderRadius = 20;
             this.btnAB.BorderThickness = 2;
+            this.btnAB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAB.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAB.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -286,6 +313,7 @@
             this.btnVN.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(201)))), ((int)(((byte)(166)))));
             this.btnVN.BorderRadius = 20;
             this.btnVN.BorderThickness = 2;
+            this.btnVN.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnVN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnVN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -324,7 +352,7 @@
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(192)))), ((int)(((byte)(204)))));
             this.guna2Button2.Image = global::KrungRomeHomemade.Properties.Resources.user;
             this.guna2Button2.ImageSize = new System.Drawing.Size(24, 24);
-            this.guna2Button2.Location = new System.Drawing.Point(1351, 24);
+            this.guna2Button2.Location = new System.Drawing.Point(1332, 31);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(45, 43);
             this.guna2Button2.TabIndex = 21;
@@ -342,7 +370,7 @@
             this.btnCart.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(192)))), ((int)(((byte)(204)))));
             this.btnCart.Image = global::KrungRomeHomemade.Properties.Resources.ตะกร้า;
             this.btnCart.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnCart.Location = new System.Drawing.Point(1300, 24);
+            this.btnCart.Location = new System.Drawing.Point(1282, 31);
             this.btnCart.Name = "btnCart";
             this.btnCart.Size = new System.Drawing.Size(45, 43);
             this.btnCart.TabIndex = 20;
@@ -366,13 +394,13 @@
             this.txtSearch.IconLeft = global::KrungRomeHomemade.Properties.Resources.ค้นหา1;
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(15, 0);
             this.txtSearch.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.txtSearch.Location = new System.Drawing.Point(462, 24);
+            this.txtSearch.Location = new System.Drawing.Point(460, 30);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(60)))), ((int)(((byte)(40)))));
             this.txtSearch.PlaceholderText = "Search your sweets...";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(824, 43);
+            this.txtSearch.Size = new System.Drawing.Size(734, 39);
             this.txtSearch.TabIndex = 18;
             this.txtSearch.TextOffset = new System.Drawing.Point(10, 3);
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
@@ -409,18 +437,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1484, 711);
+            this.ClientSize = new System.Drawing.Size(1484, 687);
             this.Controls.Add(this.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Krung_Rome_Homemade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
             this.Load += new System.EventHandler(this.KrungRomeHomemade);
             this.panelMain.ResumeLayout(false);
             this.panelCategory.ResumeLayout(false);
-            this.panelTopห.ResumeLayout(false);
-            this.panelTopห.PerformLayout();
+            this.panelTop.ResumeLayout(false);
+            this.panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.ResumeLayout(false);
@@ -434,8 +462,8 @@
         private Guna.UI2.WinForms.Guna2Button btnPA;
         private Guna.UI2.WinForms.Guna2Button btnAB;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Panel panelTopห;
+        private Guna.UI2.WinForms.Guna2Button btnSS;
+        private Guna.UI2.WinForms.Guna2Panel panelTop;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label label3;
@@ -446,5 +474,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2Button btnCart;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnAll;
     }
 }

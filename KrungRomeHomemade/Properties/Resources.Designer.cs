@@ -143,6 +143,16 @@ namespace KrungRomeHomemade.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Krung_Rome_Homemade1 {
+            get {
+                object obj = ResourceManager.GetObject("Krung Rome Homemade1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LOGO_Krung_Rome_Homemade {
             get {
                 object obj = ResourceManager.GetObject("LOGO Krung Rome Homemade", resourceCulture);
@@ -306,6 +316,16 @@ namespace KrungRomeHomemade.Properties {
         internal static System.Drawing.Bitmap ตะกร้า {
             get {
                 object obj = ResourceManager.GetObject("ตะกร้า", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ถุง {
+            get {
+                object obj = ResourceManager.GetObject("ถุง", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
