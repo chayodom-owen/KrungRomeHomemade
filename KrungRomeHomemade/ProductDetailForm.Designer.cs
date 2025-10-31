@@ -89,7 +89,7 @@
             this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(110)))), ((int)(((byte)(60)))));
             this.lblPrice.Location = new System.Drawing.Point(123, 450);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(176, 52);
+            this.lblPrice.Size = new System.Drawing.Size(220, 64);
             this.lblPrice.TabIndex = 3;
             this.lblPrice.Text = "ราคาต่อชิ้น ฿120";
             this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -150,9 +150,9 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("TA Chailai", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(50)))), ((int)(((byte)(30)))));
-            this.lblTotal.Location = new System.Drawing.Point(117, 569);
+            this.lblTotal.Location = new System.Drawing.Point(102, 561);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(187, 60);
+            this.lblTotal.Size = new System.Drawing.Size(234, 74);
             this.lblTotal.TabIndex = 7;
             this.lblTotal.Text = "ราคารวม ฿120";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -200,7 +200,7 @@
             // 
             // ProductDetailForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));

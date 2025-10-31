@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO; // สำหรับจัดการรูปภาพ
+using KrungRomeHomemade;
 
 namespace KrungRomeHomemade
 {
@@ -82,20 +83,66 @@ namespace KrungRomeHomemade
         }
 
         private void UpdateTotal()
+
         {
             lblTotal.Text = $"ราคารวม ฿ {pricePerItem * quantity:N0}";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            // ✅ สร้างอ็อบเจกต์สินค้าใหม่
+            var item = new CartItem
+            {
+                Name = lblName.Text,
+                Price = pricePerItem,
+                Quantity = quantity,
+                Image = picProduct.Image,
+            };
+
+            // ✅ ตรวจว่ามีสินค้านี้อยู่ในตะกร้าแล้วหรือยัง
+            var existing = CartData.Items.FirstOrDefault(i => i.Name == item.Name);
+            if (existing != null)
+            {
+                existing.Quantity += quantity; // ถ้ามีแล้ว เพิ่มจำนวน
+            }
+            else
+            {
+                CartData.Items.Add(item); // ถ้ายังไม่มี เพิ่มใหม่ในตะกร้า
+            }
+
+            // ✅ แสดงข้อความยืนยัน
             MessageBox.Show(
                 $"เพิ่ม {lblName.Text} จำนวน {quantity} ชิ้น ลงตะกร้าเรียบร้อยแล้ว!",
                 "เพิ่มสินค้าสำเร็จ",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
             );
+
             this.Close();
+
+            // 🧺 เมื่อปิดหน้ารายละเอียดแล้ว ให้ CartPage โหลดใหม่อัตโนมัติ
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is CartPage cartPage)
+                {
+                    cartPage.LoadCartItems(); // รีโหลดข้อมูลในตะกร้า
+                    break;
+                }
+            }
+
+            // เมื่อปิดหน้ารายละเอียดแล้ว ให้หน้า CartPage โหลดใหม่อัตโนมัติ (กรณีเปิดอยู่)
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is CartPage cartPage)
+                {
+                    cartPage.LoadCartItems();
+                    break;
+                }
+            }
+
         }
+
+
 
         private void lblDesc_Click(object sender, EventArgs e)
         {
@@ -109,7 +156,8 @@ namespace KrungRomeHomemade
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
+
         }
     }
 }

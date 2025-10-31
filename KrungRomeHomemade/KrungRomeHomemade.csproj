@@ -111,6 +111,7 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="classItem\CartData.cs" />
     <Compile Include="CartPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +150,7 @@
       <DependentUpon>Login.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="classItem\CartItem.cs" />
     <Compile Include="OrderPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,5 +320,6 @@
   <ItemGroup>
     <None Include="Resources\Krung Rome Homemade.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

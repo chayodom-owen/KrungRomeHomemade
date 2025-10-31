@@ -80,7 +80,7 @@
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Padding = new System.Windows.Forms.Padding(40, 70, 40, 20);
-            this.panelLeft.Size = new System.Drawing.Size(906, 687);
+            this.panelLeft.Size = new System.Drawing.Size(906, 700);
             this.panelLeft.TabIndex = 1;
             this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeft_Paint);
             // 
@@ -94,10 +94,9 @@
             this.flowCartItems.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowCartItems.Location = new System.Drawing.Point(40, 70);
             this.flowCartItems.Name = "flowCartItems";
-            this.flowCartItems.Padding = new System.Windows.Forms.Padding(50, 20, 10, 20);
-            this.flowCartItems.Size = new System.Drawing.Size(826, 597);
+            this.flowCartItems.Padding = new System.Windows.Forms.Padding(30, 10, 20, 10);
+            this.flowCartItems.Size = new System.Drawing.Size(826, 610);
             this.flowCartItems.TabIndex = 3;
-            this.flowCartItems.WrapContents = false;
             this.flowCartItems.Paint += new System.Windows.Forms.PaintEventHandler(this.flowCartItems_Paint);
             // 
             // lblCartTitle
@@ -105,7 +104,7 @@
             this.lblCartTitle.AutoSize = true;
             this.lblCartTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblCartTitle.Font = new System.Drawing.Font("FC Issara [Non-commercial] Semi", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCartTitle.Location = new System.Drawing.Point(53, 20);
+            this.lblCartTitle.Location = new System.Drawing.Point(33, 10);
             this.lblCartTitle.Name = "lblCartTitle";
             this.lblCartTitle.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
             this.lblCartTitle.Size = new System.Drawing.Size(213, 75);
@@ -125,11 +124,11 @@
             this.panelItem1.Controls.Add(this.lblDesc);
             this.panelItem1.Controls.Add(this.lblName);
             this.panelItem1.Controls.Add(this.picProduct);
-            this.panelItem1.Location = new System.Drawing.Point(53, 98);
+            this.panelItem1.Location = new System.Drawing.Point(33, 88);
             this.panelItem1.Name = "panelItem1";
             this.panelItem1.Padding = new System.Windows.Forms.Padding(0, 15, 0, 15);
             this.panelItem1.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(203)))), ((int)(((byte)(194)))));
-            this.panelItem1.Size = new System.Drawing.Size(735, 140);
+            this.panelItem1.Size = new System.Drawing.Size(748, 140);
             this.panelItem1.TabIndex = 2;
             this.panelItem1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelItem1_Paint);
             // 
@@ -140,7 +139,7 @@
             this.lblPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblPrice.Font = new System.Drawing.Font("FC Issara [Non-commercial] Semi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(138)))), ((int)(((byte)(84)))));
-            this.lblPrice.Location = new System.Drawing.Point(628, 91);
+            this.lblPrice.Location = new System.Drawing.Point(641, 91);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(70, 24);
             this.lblPrice.TabIndex = 8;
@@ -209,6 +208,7 @@
             this.lblDesc.Size = new System.Drawing.Size(289, 15);
             this.lblDesc.TabIndex = 4;
             this.lblDesc.Text = "Buttery flaky French croissant made with pure butter";
+            this.lblDesc.Click += new System.EventHandler(this.lblDesc_Click);
             // 
             // lblName
             // 
@@ -246,7 +246,7 @@
             this.panelRight.Controls.Add(this.lblSubtotalText);
             this.panelRight.Controls.Add(this.lblSummaryTitle);
             this.panelRight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(64)))), ((int)(((byte)(51)))));
-            this.panelRight.Location = new System.Drawing.Point(958, 90);
+            this.panelRight.Location = new System.Drawing.Point(978, 70);
             this.panelRight.Name = "panelRight";
             this.panelRight.Padding = new System.Windows.Forms.Padding(20);
             this.panelRight.Size = new System.Drawing.Size(431, 314);
@@ -330,7 +330,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(1500, 687);
+            this.ClientSize = new System.Drawing.Size(1500, 700);
             this.Controls.Add(this.panelRight);
             this.Controls.Add(this.panelLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

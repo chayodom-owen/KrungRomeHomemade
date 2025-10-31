@@ -21,8 +21,104 @@ namespace KrungRomeHomemade
 
         private void CartPage_Load(object sender, EventArgs e)
         {
+            LoadCartItems();
 
         }
+
+        // ✅ โหลดรายการสินค้าในตะกร้า
+        public void LoadCartItems()
+        {
+            flowCartItems.Controls.Clear();
+
+            foreach (var item in CartData.Items)
+            {
+                // 🔸 Panel พื้นหลังสินค้า
+                Guna.UI2.WinForms.Guna2Panel panel = new Guna.UI2.WinForms.Guna2Panel();
+                panel.Width = flowCartItems.ClientSize.Width - 40; // ลดอีกนิดเพื่อกันเกินขวา
+                panel.Height = 120;
+                panel.BorderColor = Color.FromArgb(230, 200, 180);
+                panel.BorderThickness = 1;
+                panel.BorderRadius = 15;
+                panel.BackColor = Color.FromArgb(255, 252, 247);
+                panel.Margin = new Padding(0, 0, 0, 10);
+
+                // 🖼️ รูปสินค้า
+                PictureBox pic = new PictureBox();
+                pic.Image = item.Image;
+                pic.SizeMode = PictureBoxSizeMode.Zoom;
+                pic.Location = new Point(20, 15);
+                pic.Size = new Size(100, 100);
+                panel.Controls.Add(pic);
+
+                // 🧁 ชื่อสินค้า
+                Label lblName = new Label();
+                lblName.Text = item.Name;
+                lblName.Font = new Font("FC Minimal", 15, FontStyle.Bold);
+                lblName.ForeColor = Color.FromArgb(80, 45, 25);
+                lblName.Location = new Point(140, 25);
+                lblName.AutoSize = true;
+                panel.Controls.Add(lblName);
+
+                // ➖ ปุ่มลดจำนวน
+                Guna.UI2.WinForms.Guna2Button btnMinus = new Guna.UI2.WinForms.Guna2Button();
+                btnMinus.Text = "-";
+                btnMinus.Font = new Font("FC Minimal", 12, FontStyle.Bold);
+                btnMinus.Size = new Size(35, 35);
+                btnMinus.Location = new Point(140, 70);
+                btnMinus.BorderRadius = 8;
+                btnMinus.FillColor = Color.FromArgb(255, 245, 235);
+                btnMinus.ForeColor = Color.FromArgb(120, 70, 40);
+                btnMinus.Click += (s, e) =>
+                {
+                    if (item.Quantity > 1) item.Quantity--;
+                    LoadCartItems(); // รีเฟรช
+                };
+                panel.Controls.Add(btnMinus);
+
+                // 🔢 จำนวน
+                Label lblQty = new Label();
+                lblQty.Text = item.Quantity.ToString();
+                lblQty.Font = new Font("FC Minimal", 13);
+                lblQty.ForeColor = Color.FromArgb(80, 45, 25);
+                lblQty.AutoSize = true;
+                lblQty.Location = new Point(185, 75);
+                panel.Controls.Add(lblQty);
+
+                // ➕ ปุ่มเพิ่มจำนวน
+                Guna.UI2.WinForms.Guna2Button btnPlus = new Guna.UI2.WinForms.Guna2Button();
+                btnPlus.Text = "+";
+                btnPlus.Font = new Font("FC Minimal", 12, FontStyle.Bold);
+                btnPlus.Size = new Size(35, 35);
+                btnPlus.Location = new Point(215, 70);
+                btnPlus.BorderRadius = 8;
+                btnPlus.FillColor = Color.FromArgb(255, 245, 235);
+                btnPlus.ForeColor = Color.FromArgb(120, 70, 40);
+                btnPlus.Click += (s, e) =>
+                {
+                    item.Quantity++;
+                    LoadCartItems(); // รีเฟรช
+                };
+                panel.Controls.Add(btnPlus);
+
+                // 💰 ราคารวม (ด้านขวา)
+                Label lblTotal = new Label();
+                lblTotal.Text = $"฿{item.Price * item.Quantity:N0}";
+                lblTotal.Font = new Font("FC Minimal", 14, FontStyle.Bold);
+                lblTotal.ForeColor = Color.FromArgb(197, 138, 84);
+                lblTotal.AutoSize = true;
+                lblTotal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                lblTotal.Location = new Point(panel.Width - 100, 50);
+                panel.Controls.Add(lblTotal);
+
+                // ✅ เพิ่ม panel ลง FlowLayout
+                flowCartItems.Controls.Add(panel);
+            }
+
+            // ✅ อัปเดตยอดรวม
+            lblSubtotalValue.Text = $"฿{CartData.Subtotal:N0}";
+        }
+
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -33,6 +129,7 @@ namespace KrungRomeHomemade
   
         private void btnContinue_Click(object sender, EventArgs e)
         {
+            this.Close(); // ปิด Cart เพื่อให้ฟอร์มหลักเรียก ShowHome()
 
         }
 
@@ -88,6 +185,11 @@ namespace KrungRomeHomemade
         }
 
         private void lblPrice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDesc_Click(object sender, EventArgs e)
         {
 
         }
