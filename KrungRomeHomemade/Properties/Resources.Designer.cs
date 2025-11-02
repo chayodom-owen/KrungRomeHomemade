@@ -143,9 +143,29 @@ namespace KrungRomeHomemade.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Krung_Rome_Homemade__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("Krung Rome Homemade (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Krung_Rome_Homemade1 {
             get {
                 object obj = ResourceManager.GetObject("Krung Rome Homemade1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Krung_Rome_Homemade2 {
+            get {
+                object obj = ResourceManager.GetObject("Krung Rome Homemade2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +256,26 @@ namespace KrungRomeHomemade.Properties {
         internal static System.Drawing.Bitmap Product1 {
             get {
                 object obj = ResourceManager.GetObject("Product1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QR {
+            get {
+                object obj = ResourceManager.GetObject("QR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QR1 {
+            get {
+                object obj = ResourceManager.GetObject("QR1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

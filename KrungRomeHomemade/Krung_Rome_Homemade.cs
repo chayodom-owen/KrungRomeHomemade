@@ -94,19 +94,24 @@ namespace KrungRomeHomemade
 
             try
             {
-                using (var conn = new MySql.Data.MySqlClient.MySqlConnection("server=localhost;user id=root;password=;database=krungrome_db;"))
+                using (var conn = new MySql.Data.MySqlClient.MySqlConnection(
+                    "server=localhost;user id=root;password=;database=krungrome_db;"))
                 {
                     conn.Open();
-                    MessageBox.Show("✅ เชื่อมต่อฐานข้อมูลสำเร็จ!");
+                    // ❌ ไม่ต้องแสดงข้อความถ้าเชื่อมต่อสำเร็จ
                     conn.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("❌ เชื่อมต่อฐานข้อมูลไม่สำเร็จ\n" + ex.Message);
+                // ✅ แสดงเฉพาะตอนเชื่อมต่อฐานข้อมูลไม่สำเร็จ
+                MessageBox.Show("❌ เชื่อมต่อฐานข้อมูลไม่สำเร็จ\n" + ex.Message,
+                                "Database Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
-            homeControls = panelMain.Controls.Cast<Control>().ToArray();
 
+            homeControls = panelMain.Controls.Cast<Control>().ToArray();
         }
 
         // ✅ โหลดสินค้าจากฐานข้อมูล (รองรับตัวกรองหมวดหมู่)
@@ -150,7 +155,7 @@ namespace KrungRomeHomemade
                                 ShadowDepth = 6,
                                 ShadowShift = 3,
                                 ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal,
-                                Margin = new Padding(35, 25, 35, 30)
+                                Margin = new Padding(35, 0, 35, 30)
                             };
 
                             var img = BytesToImage(rd["image"]);

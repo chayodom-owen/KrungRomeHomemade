@@ -42,6 +42,9 @@
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net48\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="K4os.Compression.LZ4, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Compression.LZ4.1.3.8\lib\net462\K4os.Compression.LZ4.dll</HintPath>
     </Reference>
@@ -105,17 +108,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs">
+    <Compile Include="Admin\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin.Designer.cs">
+    <Compile Include="Admin\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="classItem\CartData.cs" />
-    <Compile Include="CartPage.cs">
+    <Compile Include="Allcart\PaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CartPage.Designer.cs">
+    <Compile Include="Allcart\PaymentForm.Designer.cs">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allcart\SessionData.cs" />
+    <Compile Include="classmix\CartData.cs" />
+    <Compile Include="Allcart\CartPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allcart\CartPage.Designer.cs">
       <DependentUpon>CartPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Create_Account.cs">
@@ -124,10 +134,10 @@
     <Compile Include="Create_Account.Designer.cs">
       <DependentUpon>Create_Account.cs</DependentUpon>
     </Compile>
-    <Compile Include="DashboardPage.cs">
+    <Compile Include="Admin\DashboardPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DashboardPage.Designer.cs">
+    <Compile Include="Admin\DashboardPage.Designer.cs">
       <DependentUpon>DashboardPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Forgot_Password.cs">
@@ -150,11 +160,10 @@
       <DependentUpon>Login.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="classItem\CartItem.cs" />
-    <Compile Include="OrderPage.cs">
+    <Compile Include="Admin\OrderPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrderPage.Designer.cs">
+    <Compile Include="Admin\OrderPage.Designer.cs">
       <DependentUpon>OrderPage.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductDetailForm.cs">
@@ -163,31 +172,34 @@
     <Compile Include="ProductDetailForm.Designer.cs">
       <DependentUpon>ProductDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductPage.cs">
+    <Compile Include="Admin\ProductPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductPage.Designer.cs">
+    <Compile Include="Admin\ProductPage.Designer.cs">
       <DependentUpon>ProductPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportPage.cs">
+    <Compile Include="Admin\ReportPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportPage.Designer.cs">
+    <Compile Include="Admin\ReportPage.Designer.cs">
       <DependentUpon>ReportPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\GlobalCart.cs" />
-    <EmbeddedResource Include="Admin.resx">
+    <EmbeddedResource Include="Admin\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CartPage.resx">
+    <EmbeddedResource Include="Allcart\CartPage.resx">
       <DependentUpon>CartPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allcart\PaymentForm.resx">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Create_Account.resx">
       <DependentUpon>Create_Account.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DashboardPage.resx">
+    <EmbeddedResource Include="Admin\DashboardPage.resx">
       <DependentUpon>DashboardPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forgot_Password.resx">
@@ -200,13 +212,13 @@
       <DependentUpon>Login.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderPage.resx">
+    <EmbeddedResource Include="Admin\OrderPage.resx">
       <DependentUpon>OrderPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductDetailForm.resx">
       <DependentUpon>ProductDetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductPage.resx">
+    <EmbeddedResource Include="Admin\ProductPage.resx">
       <DependentUpon>ProductPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -219,9 +231,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ReportPage.resx">
+    <EmbeddedResource Include="Admin\ReportPage.resx">
       <DependentUpon>ReportPage.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Assets\Fonts\Sarabun-Bold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Fonts\Sarabun-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -320,6 +338,23 @@
   <ItemGroup>
     <None Include="Resources\Krung Rome Homemade.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QR.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QR1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Krung Rome Homemade1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Krung Rome Homemade %281%29.png" />
+  </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Assets\Images\ReceiptTemplate.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

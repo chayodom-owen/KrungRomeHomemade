@@ -7,12 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KrungRomeHomemade.Allcart;
 using MySql.Data.MySqlClient;
 
 namespace KrungRomeHomemade
 {
     public partial class Login : Form
     {
+
+        public static class GlobalUser
+{
+    public static string Username { get; set; }
+}
+
+
+
         bool isNavigating = false;
 
         public Login()
@@ -73,7 +82,6 @@ namespace KrungRomeHomemade
             string usernameOrEmail = Username.Text.Trim();
             string password = Password.Text.Trim();
 
-            // 🔸 ตรวจสอบช่องว่าง
             if (string.IsNullOrWhiteSpace(usernameOrEmail) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("กรุณากรอกชื่อผู้ใช้หรืออีเมล และรหัสผ่าน",
@@ -81,7 +89,6 @@ namespace KrungRomeHomemade
                 return;
             }
 
-            // 🔸 สายเชื่อมต่อฐานข้อมูล
             string connectionString = "server=localhost;user id=root;password=;database=krungrome_db;";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -90,7 +97,6 @@ namespace KrungRomeHomemade
                 {
                     conn.Open();
 
-                    // ✅ ตรวจสอบชื่อผู้ใช้หรืออีเมล และรหัสผ่าน
                     string query = "SELECT * FROM users WHERE (username = @Username OR email = @Username) AND password = @Password";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@Username", usernameOrEmail);
@@ -102,6 +108,9 @@ namespace KrungRomeHomemade
                     {
                         reader.Read();
                         string user = reader["username"].ToString();
+
+                        // ✅ เก็บชื่อผู้ใช้ไว้ใน SessionData
+                        SessionData.Username = user;
 
                         // ✅ ถ้าชื่อผู้ใช้คือ admin → เปิดหน้า Admin
                         if (user.ToLower() == "admin")
@@ -135,6 +144,7 @@ namespace KrungRomeHomemade
                 }
             }
         }
+
 
         // 🔹 เมื่อพิมพ์ชื่อผู้ใช้แล้วกด Enter → ให้โฟกัสไปช่องรหัสผ่าน
         private void Username_KeyDown(object sender, KeyEventArgs e)

@@ -156,7 +156,6 @@ namespace KrungRomeHomemade
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            
 
         }
     }

@@ -1,22 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KrungRomeHomemade
 {
     internal static class Program
     {
-        /// <summary>
-        /// จุดเริ่มต้นของโปรแกรม
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Krung_Rome_Homemade()); // ✅ ใช้ชื่อฟอร์มให้ตรงกับไฟล์ LoginForm.cs
+            Application.Run(new Admin());  // ✅ เปลี่ยนชื่อฟอร์มตรงนี้ตามหน้าที่ต้องการให้เปิดก่อน
         }
     }
 }
