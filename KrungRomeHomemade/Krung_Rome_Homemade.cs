@@ -1,0 +1,608 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Guna.UI2.WinForms;          // ⬅️ เพิ่มที่บนไฟล์
+using System.Globalization;
+
+namespace KrungRomeHomemade
+{
+    public partial class Krung_Rome_Homemade : Form
+    {
+
+        // เก็บคอนโทรลของหน้า Home เดิม (ใน panelMain) เพื่อซ่อน/โชว์
+        private Control[] homeControls;
+        // เก็บฟอร์มลูก (เช่น CartPage) ที่ถูกฝังอยู่ตอนนี้
+        private Form currentChild;
+
+        public Krung_Rome_Homemade()
+        {
+            InitializeComponent();
+
+            panelTop.Dock = DockStyle.Top;
+            panelMain.Dock = DockStyle.Fill;
+
+            typeof(Panel).InvokeMember("DoubleBuffered",
+                System.Reflection.BindingFlags.SetProperty |
+                System.Reflection.BindingFlags.Instance |
+                System.Reflection.BindingFlags.NonPublic,
+                null, panelMain, new object[] { true });
+
+            this.Load += Krung_Rome_Homemade_Load;
+        }
+
+        private void KrungRomeHomemade(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "คุณต้องการปิดโปรแกรม กรุงโรมโฮมเมด จริงหรือไม่?",
+                "ยืนยันการปิดโปรแกรม",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit(); // ✅ ปิดโปรแกรมทั้งหมด
+            }
+        }
+
+        private void panelTop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowProducts_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        // ✅ ฟังก์ชันเมื่อโหลดหน้า Home
+        private void Krung_Rome_Homemade_Load(object sender, EventArgs e)
+        {
+            // ✅ กำหนดขนาดหน้าจอให้เท่าเดิมเสมอ
+            this.Width = 1500;
+            this.Height = 800;
+            this.FormBorderStyle = FormBorderStyle.Sizable;
+            this.MaximizeBox = true;
+            this.MinimizeBox = true;
+
+            // ✅ จัดให้อยู่ตรงกลางจอแน่นอน
+            this.StartPosition = FormStartPosition.Manual;
+            Rectangle screen = Screen.FromPoint(Cursor.Position).WorkingArea;
+            this.Location = new Point(
+                (screen.Width - this.Width) / 2,
+                (screen.Height - this.Height) / 2
+            );
+
+            // ✅ ตั้งชื่อ/หัวข้อ
+            this.Text = "KrungRome Homemade Bakery";
+            LoadProductCards();
+
+            // --------------------------------------------------------
+            // 🔴 เพิ่มบรรทัดนี้เข้าไปครับ! เพื่อให้ปุ่มหมวดหมู่ทำงาน
+            // --------------------------------------------------------
+            LoadDynamicCategories();
+            // --------------------------------------------------------
+
+            try
+            {
+                using (var conn = new MySql.Data.MySqlClient.MySqlConnection(
+                    "server=localhost;user id=root;password=;database=krungrome_db;"))
+                {
+                    conn.Open();
+                    // ❌ ไม่ต้องแสดงข้อความถ้าเชื่อมต่อสำเร็จ
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                // ✅ แสดงเฉพาะตอนเชื่อมต่อฐานข้อมูลไม่สำเร็จ
+                MessageBox.Show("❌ เชื่อมต่อฐานข้อมูลไม่สำเร็จ\n" + ex.Message,
+                                "Database Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+
+            homeControls = panelMain.Controls.Cast<Control>().ToArray();
+        }
+
+        // ✅ โหลดสินค้าจากฐานข้อมูล (รองรับตัวกรองหมวดหมู่)
+        private void LoadProductCards(string categoryFilter = "")
+        {
+            flowProducts.SuspendLayout();
+            flowProducts.Controls.Clear();
+            flowProducts.FlowDirection = FlowDirection.LeftToRight;
+            flowProducts.WrapContents = true;
+            flowProducts.AutoScroll = true;
+            flowProducts.BackColor = ColorTranslator.FromHtml("#FFF9F4");
+            flowProducts.Padding = new Padding(40, 30, 40, 30);
+
+            string cs = "server=localhost;user id=root;password=;database=krungrome_db;";
+            using (var conn = new MySql.Data.MySqlClient.MySqlConnection(cs))
+            {
+                conn.Open();
+
+                string sql = "SELECT product_id, name, price, image, description FROM products";
+                if (!string.IsNullOrEmpty(categoryFilter))
+                    sql += " WHERE category LIKE CONCAT('%', @category, '%')";
+                sql += " ORDER BY product_id ASC";
+
+                using (var cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn))
+                {
+                    if (!string.IsNullOrEmpty(categoryFilter))
+                        cmd.Parameters.AddWithValue("@category", categoryFilter);
+
+                    using (var rd = cmd.ExecuteReader())
+                    {
+                        while (rd.Read())
+                        {
+                            string productId = rd["product_id"].ToString();  // ✅ เพิ่มบรรทัดนี้
+
+                            var card = new Guna.UI2.WinForms.Guna2ShadowPanel
+                            {
+                                Width = 260,
+                                Height = 500,
+                                BackColor = Color.Transparent,
+                                FillColor = Color.White,
+                                Radius = 7,
+                                ShadowColor = Color.FromArgb(242, 238, 232),
+                                ShadowDepth = 6,
+                                ShadowShift = 3,
+                                ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal,
+                                Margin = new Padding(35, 0, 35, 30)
+                            };
+
+                            var img = BytesToImage(rd["image"]);
+                            img = CropToAspect(img, 1.0 / 1.0);
+
+                            var pic = new Guna.UI2.WinForms.Guna2PictureBox
+                            {
+                                Image = img,
+                                Width = 230,
+                                Height = 230,
+                                SizeMode = PictureBoxSizeMode.Zoom,
+                                BorderRadius = 6,
+                                UseTransparentBackground = true,
+                                BackColor = Color.White,
+                                Location = new Point((card.Width - 232) / 2, 15)
+                            };
+
+                            var name = new Label
+                            {
+                                Text = (rd["name"]?.ToString() ?? "").Trim(),
+                                Font = new Font("TA Chailai", 22, FontStyle.Bold),
+                                ForeColor = Color.FromArgb(90, 60, 40),
+                                TextAlign = ContentAlignment.MiddleCenter,
+                                AutoSize = false,
+                                Size = new Size(card.Width, 40),
+                                Location = new Point(0, pic.Bottom + 15)
+                            };
+
+                            string descText = (rd["description"]?.ToString() ?? "").Trim();
+                            if (descText.Length > 300) descText = descText.Substring(0, 297).Trim() + "...";
+
+                            var desc = new Label
+                            {
+                                Text = descText,
+                                Font = new Font("FC Issara Rounded [Non-cml.] SmB", 9.5f, FontStyle.Regular),
+                                ForeColor = Color.FromArgb(130, 100, 70),
+                                TextAlign = ContentAlignment.TopCenter,
+                                AutoSize = false,
+                                Size = new Size(card.Width - 30, 70),
+                                Location = new Point(15, name.Bottom + 0),
+                                BackColor = Color.Transparent
+                            };
+
+                            decimal.TryParse(rd["price"]?.ToString(), NumberStyles.Any, CultureInfo.InvariantCulture, out decimal price);
+                            var priceLabel = new Label
+                            {
+                                Text = $"฿ {price:N0}",
+                                Font = new Font("TA Chailai", 25, FontStyle.Bold),
+                                ForeColor = Color.FromArgb(170, 110, 50),
+                                TextAlign = ContentAlignment.MiddleCenter,
+                                AutoSize = false,
+                                Size = new Size(card.Width, 35),
+                                Location = new Point(0, desc.Bottom + 10)
+                            };
+
+                            var btnAdd = new Guna.UI2.WinForms.Guna2Button
+                            {
+                                Text = "🛒  Add to Cart",
+                                Height = 38,
+                                Width = 200,
+                                BorderRadius = 18,
+                                FillColor = Color.FromArgb(200, 150, 90),
+                                Font = new Font("TA Chailai", 18.5f),
+                                ForeColor = Color.White,
+                                Cursor = Cursors.Hand,
+                                Location = new Point((card.Width - 200) / 2, priceLabel.Bottom + 15)
+                            };
+
+                            btnAdd.Click += (s, e) =>
+                            {
+                                // ✅ ส่ง productId เข้าไปด้วย
+                                var popup = new ProductDetailForm(
+                                    productId,
+                                    name.Text,
+                                    desc.Text,
+                                    pic.Image,
+                                    price
+                                );
+                                popup.ShowDialog();
+                            };
+
+                            card.Controls.Add(pic);
+                            card.Controls.Add(name);
+                            card.Controls.Add(desc);
+                            card.Controls.Add(priceLabel);
+                            card.Controls.Add(btnAdd);
+                            pic.BringToFront();
+
+                            flowProducts.Controls.Add(card);
+                        } // ✅ ปิด while
+                    } // ✅ ปิด using reader
+                } // ✅ ปิด using cmd
+            } // ✅ ปิด using conn
+
+            flowProducts.ResumeLayout();
+
+            // จัดให้อยู่กึ่งกลาง
+            flowProducts.Layout += (s, e) =>
+            {
+                int cardWidth = 240;
+                int spacing = 30;
+                int totalCardWidth = cardWidth + spacing;
+                int visibleWidth = flowProducts.ClientSize.Width;
+
+                int numPerRow = Math.Max(1, visibleWidth / totalCardWidth);
+                int usedWidth = numPerRow * totalCardWidth - spacing;
+                int padding = Math.Max(0, (visibleWidth - usedWidth) / 2);
+
+                flowProducts.Padding = new Padding(padding, 30, padding, 30);
+            };
+        } // ✅ ปิดฟังก์ชัน LoadProductCards()
+
+
+        // ✅ แปลง byte[] → Image
+        private Image BytesToImage(object dbValue)
+        {
+            if (dbValue == null || dbValue is DBNull)
+                return null;
+
+            var bytes = (byte[])dbValue;
+
+            // 🔸 ถ้าไม่มีข้อมูลเลย
+            if (bytes.Length == 0)
+                return null;
+
+            try
+            {
+                using (var ms = new System.IO.MemoryStream(bytes))
+                {
+                    return Image.FromStream(ms);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"⚠️ ไม่สามารถอ่านภาพได้: {ex.Message}");
+                return null; // คืนค่า null แทนการ throw error
+            }
+        }
+
+        // ✅ ฟังก์ชันครอบภาพให้อัตราส่วนเท่ากันทุกภาพ (4:5)
+        private Image CropToAspect(Image img, double targetRatio = 4.0 / 5.0)
+        {
+            if (img == null) return null;
+
+            int width = img.Width;
+            int height = img.Height;
+            double currentRatio = (double)width / height;
+
+            if (Math.Abs(currentRatio - targetRatio) < 0.01)
+                return img;
+
+            Rectangle cropArea;
+
+            if (currentRatio > targetRatio)
+            {
+                int newWidth = (int)(height * targetRatio);
+                int x = (width - newWidth) / 2;
+                cropArea = new Rectangle(x, 0, newWidth, height);
+            }
+            else
+            {
+                int newHeight = (int)(width / targetRatio);
+                int y = (height - newHeight) / 2;
+                cropArea = new Rectangle(0, y, width, newHeight);
+            }
+
+            Bitmap cropped = new Bitmap(cropArea.Width, cropArea.Height);
+            using (Graphics g = Graphics.FromImage(cropped))
+            {
+                g.DrawImage(img, new Rectangle(0, 0, cropped.Width, cropped.Height), cropArea, GraphicsUnit.Pixel);
+            }
+            return cropped;
+        }
+
+        private void btnVN_Click(object sender, EventArgs e)
+        {
+            LoadProductCards("Viennoiserie");
+        }
+
+        private void btnAB_Click(object sender, EventArgs e)
+        {
+            LoadProductCards("Artisan Breads");
+        }
+
+        private void btnPA_Click(object sender, EventArgs e)
+        {
+            LoadProductCards("Patisserie");
+        }
+        private void btnSS_Click(object sender, EventArgs e)
+        {
+            LoadProductCards("Sandwich / Savory");
+        }
+
+        private void btnAll_Click(object sender, EventArgs e)
+        {
+            LoadProductCards(); // ไม่ใส่พารามิเตอร์ = แสดงทั้งหมด
+        }
+
+        private void panelCategory_Paint(object sender, PaintEventArgs e) { }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text.Trim().ToLower();
+            if (string.IsNullOrEmpty(keyword))
+            {
+                LoadProductCards(); // ถ้าไม่มีคำค้น ให้แสดงทั้งหมด
+                return;
+            }
+
+            flowProducts.Controls.Clear();
+
+            using (var conn = new MySql.Data.MySqlClient.MySqlConnection("server=localhost;user id=root;password=;database=krungrome_db;"))
+            {
+                conn.Open();
+                string sql = @"SELECT name, price, image, description 
+                       FROM products 
+                       WHERE LOWER(name) LIKE @kw OR LOWER(description) LIKE @kw";
+                using (var cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@kw", "%" + keyword + "%");
+                    using (var rd = cmd.ExecuteReader())
+                    {
+                        while (rd.Read())
+                        {
+                            var card = new Guna2ShadowPanel
+                            {
+                                Width = 260,
+                                Height = 450,
+                                BackColor = Color.Transparent,
+                                FillColor = Color.White,
+                                Radius = 7,
+                                ShadowColor = Color.FromArgb(242, 238, 232),
+                                ShadowDepth = 6,
+                                ShadowShift = 3,
+                                ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal,
+                                Margin = new Padding(35, 25, 35, 30)
+                            };
+
+                            var img = BytesToImage(rd["image"]);
+                            img = CropToAspect(img, 1.0 / 1.0);
+
+                            var pic = new Guna2PictureBox
+                            {
+                                Image = img,
+                                Width = 230,
+                                Height = 230,
+                                SizeMode = PictureBoxSizeMode.Zoom,
+                                BorderRadius = 6,
+                                UseTransparentBackground = true,
+                                BackColor = Color.White,
+                                Location = new Point((card.Width - 232) / 2, 15)
+                            };
+
+                            var name = new Label
+                            {
+                                Text = (rd["name"]?.ToString() ?? "").Trim(),
+                                Font = new Font("TA Chailai", 16, FontStyle.Bold),
+                                ForeColor = Color.FromArgb(90, 60, 40),
+                                TextAlign = ContentAlignment.MiddleCenter,
+                                AutoSize = false,
+                                Size = new Size(card.Width, 40),
+                                Location = new Point(0, pic.Bottom + 10)
+                            };
+
+                            string descText = (rd["description"]?.ToString() ?? "").Trim();
+                            if (descText.Length > 45) descText = descText.Substring(0, 42) + "...";
+                            var desc = new Label
+                            {
+                                Text = descText,
+                                Font = new Font("Segoe UI", 8.8f),
+                                ForeColor = Color.FromArgb(130, 100, 70),
+                                TextAlign = ContentAlignment.MiddleCenter,
+                                AutoSize = false,
+                                Size = new Size(card.Width - 20, 30),
+                                Location = new Point(10, name.Bottom + 5)
+                            };
+
+                            decimal.TryParse(rd["price"]?.ToString(), NumberStyles.Any, CultureInfo.InvariantCulture, out decimal price);
+                            var priceLabel = new Label
+                            {
+                                Text = $"฿{price:N0}",
+                                Font = new Font("Segoe UI Semibold", 11, FontStyle.Bold),
+                                ForeColor = Color.FromArgb(170, 110, 50),
+                                TextAlign = ContentAlignment.MiddleCenter,
+                                AutoSize = false,
+                                Size = new Size(card.Width, 30),
+                                Location = new Point(0, desc.Bottom + 5)
+                            };
+
+                            // ✅ เพิ่มปุ่ม Add to Cart เหมือนฟังก์ชันหลัก
+                            var btnAdd = new Guna2Button
+                            {
+                                Text = "🛒  Add to Cart",
+                                Height = 38,
+                                Width = 200,
+                                BorderRadius = 18,
+                                FillColor = Color.FromArgb(200, 150, 90),
+                                Font = new Font("Segoe UI Semibold", 9.5f),
+                                ForeColor = Color.White,
+                                Cursor = Cursors.Hand,
+                                Location = new Point((card.Width - 200) / 2, card.Height - 55)
+                            };
+                            btnAdd.HoverState.FillColor = Color.FromArgb(230, 180, 110);
+
+                            // ✅ เรียงเหมือนเดิม (รูปอยู่บนสุด)
+                            card.Controls.Add(pic);
+                            card.Controls.Add(name);
+                            card.Controls.Add(desc);
+                            card.Controls.Add(priceLabel);
+                            card.Controls.Add(btnAdd);
+                            pic.BringToFront();
+
+                            flowProducts.Controls.Add(card);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnCart_Click(object sender, EventArgs e)
+        {
+            OpenChildInMain(new CartPage());
+        }
+
+
+        // ฝังฟอร์มลูก (เช่น CartPage) ลงใน panelMain โดยไม่ทำลายหน้า Home เดิม
+        private void OpenChildInMain(Form child)
+        {
+            // 1) ซ่อนคอนโทรลหน้า Home เดิมทั้งหมด (ไม่ลบ)
+            if (homeControls != null)
+                foreach (var c in homeControls) c.Visible = false;
+
+            // 2) เอาฟอร์มลูกเก่าทิ้งถ้ามี
+            if (currentChild != null)
+            {
+                panelMain.Controls.Remove(currentChild);
+                currentChild.Dispose();
+                currentChild = null;
+            }
+
+            // 3) ฝังฟอร์มลูกใหม่
+            currentChild = child;
+            child.TopLevel = false;
+            child.FormBorderStyle = FormBorderStyle.None;
+            child.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(child);
+
+            // 4) เมื่อฟอร์มลูกปิด ให้กลับหน้า Home
+            child.FormClosed += (s, e) => ShowHome();
+
+            child.Show();
+        }
+
+        // กลับไปหน้า Home เดิม (โชว์คอนโทรลที่ซ่อนไว้)
+        private void ShowHome()
+        {
+            // ถ้ามีฟอร์มลูกค้างอยู่ ให้เอาออกและทิ้งให้เรียบร้อย
+            if (currentChild != null)
+            {
+                panelMain.Controls.Remove(currentChild);
+                currentChild.Dispose();
+                currentChild = null;
+            }
+
+            // โชว์คอนโทรลหน้า Home เดิมกลับมา
+            if (homeControls != null)
+                foreach (var c in homeControls) c.Visible = true;
+        }
+
+        private void flowPanelCategories_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        // ✅ ฟังก์ชันสร้างปุ่มหมวดหมู่จากฐานข้อมูล
+        private void LoadDynamicCategories()
+        {
+            // 1. เคลียร์ปุ่มเก่าออกให้หมดก่อน
+            flowPanelCategories.Controls.Clear();
+
+            // 2. สร้างปุ่ม "ทั้งหมด" (Show All) ไว้ปุ่มแรกเสมอ
+            Guna2Button btnAll = CreateCategoryButton("ทั้งหมด", "");
+            flowPanelCategories.Controls.Add(btnAll);
+
+            try
+            {
+                using (var conn = new MySql.Data.MySqlClient.MySqlConnection("server=localhost;user id=root;password=;database=krungrome_db;"))
+                {
+                    conn.Open();
+                    // ดึงชื่อหมวดหมู่ที่มีอยู่จริงในตาราง categories
+                    string sql = "SELECT DISTINCT category_name FROM categories ORDER BY category_name ASC";
+
+                    using (var cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn))
+                    using (var rd = cmd.ExecuteReader())
+                    {
+                        while (rd.Read())
+                        {
+                            string catName = rd["category_name"].ToString();
+
+                            // 3. สร้างปุ่มตามชื่อหมวดหมู่
+                            Guna2Button btn = CreateCategoryButton(catName, catName);
+
+                            // 4. เอาปุ่มใส่เข้าไปใน FlowLayoutPanel
+                            flowPanelCategories.Controls.Add(btn);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("โหลดหมวดหมู่ไม่สำเร็จ: " + ex.Message);
+            }
+        }
+
+        // ✅ ฟังก์ชันย่อยสำหรับตั้งค่าหน้าตาปุ่ม (จะได้ไม่ต้องเขียนซ้ำๆ)
+        private Guna2Button CreateCategoryButton(string text, string filterValue)
+        {
+            Guna2Button btn = new Guna2Button();
+            btn.Text = text;
+            btn.Size = new Size(120, 80); // 👈 ปรับขนาดปุ่มตรงนี้
+            btn.BorderRadius = 10;        // 👈 ปรับความมน
+            btn.FillColor = Color.Transparent; // หรือเปลี่ยนเป็นสีธีมร้านได้
+            btn.ForeColor = Color.FromArgb(101, 67, 33);
+            btn.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+            btn.HoverState.FillColor = Color.FromArgb(255, 249, 244);
+            btn.Cursor = Cursors.Hand;
+            btn.Margin = new Padding(5);  // ระยะห่างระหว่างปุ่ม
+
+            // เพิ่ม Event เมื่อกดปุ่ม
+            btn.Click += (s, e) =>
+            {
+                // ถ้า filterValue เป็นว่าง "" คือโหลดทั้งหมด
+                // ถ้ามีค่า คือโหลดตามหมวดหมู่นั้น
+                LoadProductCards(filterValue);
+            };
+
+            return btn;
+        }
+
+
+    }
+}

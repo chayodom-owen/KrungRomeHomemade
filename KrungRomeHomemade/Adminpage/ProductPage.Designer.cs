@@ -1,0 +1,529 @@
+﻿namespace KrungRomeHomemade
+{
+    partial class ProductPage
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.btnAddProduct = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEditProduct = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDeleteProduct = new Guna.UI2.WinForms.Guna2Button();
+            this.ds = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cmbCategory = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtStock = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dataGridProducts = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblCategory = new System.Windows.Forms.Label();
+            this.lblStock = new System.Windows.Forms.Label();
+            this.btnSelectImage = new Guna.UI2.WinForms.Guna2Button();
+            this.lblProductId = new System.Windows.Forms.Label();
+            this.txtProductId = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Addcategory = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDeleteCategory = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.pictureBoxProduct = new Guna.UI2.WinForms.Guna2PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.BorderRadius = 20;
+            this.btnAddProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddProduct.FillColor = System.Drawing.Color.RosyBrown;
+            this.btnAddProduct.Font = new System.Drawing.Font("TA Chailai", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btnAddProduct.ForeColor = System.Drawing.Color.White;
+            this.btnAddProduct.Location = new System.Drawing.Point(250, 421);
+            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(155, 52);
+            this.btnAddProduct.TabIndex = 1;
+            this.btnAddProduct.Text = "➕ เพิ่มสินค้า";
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
+            // 
+            // btnEditProduct
+            // 
+            this.btnEditProduct.BorderRadius = 20;
+            this.btnEditProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEditProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEditProduct.FillColor = System.Drawing.Color.RosyBrown;
+            this.btnEditProduct.Font = new System.Drawing.Font("TA Chailai", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btnEditProduct.ForeColor = System.Drawing.Color.White;
+            this.btnEditProduct.Location = new System.Drawing.Point(735, 421);
+            this.btnEditProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditProduct.Name = "btnEditProduct";
+            this.btnEditProduct.Size = new System.Drawing.Size(155, 52);
+            this.btnEditProduct.TabIndex = 2;
+            this.btnEditProduct.Text = "✏️ แก้ไขสินค้า";
+            this.btnEditProduct.Click += new System.EventHandler(this.btnEditProduct_Click);
+            // 
+            // btnDeleteProduct
+            // 
+            this.btnDeleteProduct.BorderRadius = 20;
+            this.btnDeleteProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeleteProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDeleteProduct.FillColor = System.Drawing.Color.RosyBrown;
+            this.btnDeleteProduct.Font = new System.Drawing.Font("TA Chailai", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btnDeleteProduct.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteProduct.Location = new System.Drawing.Point(482, 421);
+            this.btnDeleteProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeleteProduct.Name = "btnDeleteProduct";
+            this.btnDeleteProduct.Size = new System.Drawing.Size(155, 52);
+            this.btnDeleteProduct.TabIndex = 3;
+            this.btnDeleteProduct.Text = "❌ ลบสินค้า";
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
+            // 
+            // ds
+            // 
+            this.ds.BackColor = System.Drawing.Color.Transparent;
+            this.ds.Font = new System.Drawing.Font("TA Chailai", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ds.Location = new System.Drawing.Point(75, 71);
+            this.ds.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ds.Name = "ds";
+            this.ds.Size = new System.Drawing.Size(3, 2);
+            this.ds.TabIndex = 8;
+            this.ds.Text = null;
+            this.ds.Click += new System.EventHandler(this.lblTitle_Click);
+            // 
+            // txtName
+            // 
+            this.txtName.BorderRadius = 20;
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtName.DefaultText = "";
+            this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.FillColor = System.Drawing.Color.IndianRed;
+            this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.Font = new System.Drawing.Font("TA Chailai", 12F, System.Drawing.FontStyle.Bold);
+            this.txtName.ForeColor = System.Drawing.Color.Black;
+            this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.Location = new System.Drawing.Point(260, 109);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtName.Name = "txtName";
+            this.txtName.PlaceholderText = "";
+            this.txtName.SelectedText = "";
+            this.txtName.Size = new System.Drawing.Size(327, 42);
+            this.txtName.TabIndex = 9;
+            // 
+            // cmbCategory
+            // 
+            this.cmbCategory.BackColor = System.Drawing.Color.Transparent;
+            this.cmbCategory.BorderRadius = 20;
+            this.cmbCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategory.FillColor = System.Drawing.Color.IndianRed;
+            this.cmbCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbCategory.Font = new System.Drawing.Font("TA Chailai", 13.8F, System.Drawing.FontStyle.Bold);
+            this.cmbCategory.ForeColor = System.Drawing.Color.White;
+            this.cmbCategory.ItemHeight = 30;
+            this.cmbCategory.Items.AddRange(new object[] {
+            "เวียนนัวเซอรี (Viennoiserie)",
+            "ขนมปังยุโรป (Artisan Breads)",
+            "ปาทิสเซอรี (Pâtisserie)",
+            "แซนด์วิช / ของคาว (Sandwich & Savory)"});
+            this.cmbCategory.Location = new System.Drawing.Point(250, 173);
+            this.cmbCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Size = new System.Drawing.Size(436, 36);
+            this.cmbCategory.TabIndex = 10;
+            this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.BorderRadius = 20;
+            this.txtPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPrice.DefaultText = "";
+            this.txtPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPrice.FillColor = System.Drawing.Color.IndianRed;
+            this.txtPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPrice.Font = new System.Drawing.Font("TA Chailai", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtPrice.ForeColor = System.Drawing.Color.White;
+            this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPrice.Location = new System.Drawing.Point(692, 114);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.PlaceholderText = "";
+            this.txtPrice.SelectedText = "";
+            this.txtPrice.Size = new System.Drawing.Size(184, 42);
+            this.txtPrice.TabIndex = 11;
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
+            // 
+            // txtStock
+            // 
+            this.txtStock.BorderRadius = 20;
+            this.txtStock.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtStock.DefaultText = "";
+            this.txtStock.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtStock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtStock.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtStock.FillColor = System.Drawing.Color.IndianRed;
+            this.txtStock.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtStock.Font = new System.Drawing.Font("FC Issara [Non-commercial] Semi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStock.ForeColor = System.Drawing.Color.White;
+            this.txtStock.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtStock.Location = new System.Drawing.Point(988, 114);
+            this.txtStock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.PlaceholderText = "";
+            this.txtStock.SelectedText = "";
+            this.txtStock.Size = new System.Drawing.Size(184, 42);
+            this.txtStock.TabIndex = 12;
+            this.txtStock.TextChanged += new System.EventHandler(this.txtStock_TextChanged);
+            // 
+            // dataGridProducts
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridProducts.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridProducts.ColumnHeadersHeight = 4;
+            this.dataGridProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridProducts.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridProducts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridProducts.Location = new System.Drawing.Point(119, 512);
+            this.dataGridProducts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridProducts.Name = "dataGridProducts";
+            this.dataGridProducts.RowHeadersVisible = false;
+            this.dataGridProducts.RowHeadersWidth = 51;
+            this.dataGridProducts.RowTemplate.Height = 24;
+            this.dataGridProducts.Size = new System.Drawing.Size(1320, 366);
+            this.dataGridProducts.TabIndex = 13;
+            this.dataGridProducts.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridProducts.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dataGridProducts.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dataGridProducts.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dataGridProducts.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dataGridProducts.ThemeStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridProducts.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridProducts.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dataGridProducts.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridProducts.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridProducts.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dataGridProducts.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dataGridProducts.ThemeStyle.HeaderStyle.Height = 4;
+            this.dataGridProducts.ThemeStyle.ReadOnly = false;
+            this.dataGridProducts.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridProducts.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridProducts.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridProducts.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataGridProducts.ThemeStyle.RowsStyle.Height = 24;
+            this.dataGridProducts.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridProducts.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataGridProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProducts_CellClick);
+            this.dataGridProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProducts_CellContentClick_1);
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("TA Chailai", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(91, 114);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(91, 41);
+            this.lblName.TabIndex = 14;
+            this.lblName.Text = "ชื่อสินค้า";
+            this.lblName.Click += new System.EventHandler(this.lblName_Click);
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("TA Chailai", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(68, 44);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(126, 41);
+            this.lblTitle.TabIndex = 15;
+            this.lblTitle.Text = "จัดการสินค้า";
+            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click_1);
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("TA Chailai", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(624, 111);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(62, 41);
+            this.lblPrice.TabIndex = 16;
+            this.lblPrice.Text = "ราคา";
+            // 
+            // lblCategory
+            // 
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Font = new System.Drawing.Font("TA Chailai", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.Location = new System.Drawing.Point(84, 173);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(97, 41);
+            this.lblCategory.TabIndex = 17;
+            this.lblCategory.Text = "หมวดหมู่";
+            // 
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.Font = new System.Drawing.Font("TA Chailai", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.Location = new System.Drawing.Point(893, 115);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(87, 41);
+            this.lblStock.TabIndex = 18;
+            this.lblStock.Text = "คงเหลือ";
+            // 
+            // btnSelectImage
+            // 
+            this.btnSelectImage.BorderRadius = 20;
+            this.btnSelectImage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSelectImage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSelectImage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSelectImage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSelectImage.FillColor = System.Drawing.Color.RosyBrown;
+            this.btnSelectImage.Font = new System.Drawing.Font("TA Chailai", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btnSelectImage.ForeColor = System.Drawing.Color.White;
+            this.btnSelectImage.Location = new System.Drawing.Point(1124, 421);
+            this.btnSelectImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSelectImage.Name = "btnSelectImage";
+            this.btnSelectImage.Size = new System.Drawing.Size(184, 52);
+            this.btnSelectImage.TabIndex = 19;
+            this.btnSelectImage.Text = "🖼️ เพิ่มรูปสินค้า";
+            this.btnSelectImage.Click += new System.EventHandler(this.btnSelectImage_Click);
+            // 
+            // lblProductId
+            // 
+            this.lblProductId.AutoSize = true;
+            this.lblProductId.Font = new System.Drawing.Font("TA Chailai", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductId.Location = new System.Drawing.Point(75, 234);
+            this.lblProductId.Name = "lblProductId";
+            this.lblProductId.Size = new System.Drawing.Size(106, 41);
+            this.lblProductId.TabIndex = 21;
+            this.lblProductId.Text = "รหัสสินค้า";
+            // 
+            // txtProductId
+            // 
+            this.txtProductId.BorderRadius = 20;
+            this.txtProductId.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtProductId.DefaultText = "";
+            this.txtProductId.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtProductId.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtProductId.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtProductId.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtProductId.FillColor = System.Drawing.Color.IndianRed;
+            this.txtProductId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtProductId.Font = new System.Drawing.Font("TA Chailai", 12F, System.Drawing.FontStyle.Bold);
+            this.txtProductId.ForeColor = System.Drawing.Color.Black;
+            this.txtProductId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtProductId.Location = new System.Drawing.Point(250, 232);
+            this.txtProductId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtProductId.Name = "txtProductId";
+            this.txtProductId.PlaceholderText = "";
+            this.txtProductId.ReadOnly = true;
+            this.txtProductId.SelectedText = "";
+            this.txtProductId.Size = new System.Drawing.Size(327, 42);
+            this.txtProductId.TabIndex = 22;
+            this.txtProductId.TextChanged += new System.EventHandler(this.txtProductId_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("TA Chailai", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(75, 293);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 41);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "คำอธิบาย";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDescription.DefaultText = "";
+            this.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDescription.FillColor = System.Drawing.Color.IndianRed;
+            this.txtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDescription.Font = new System.Drawing.Font("TA Chailai", 12F, System.Drawing.FontStyle.Bold);
+            this.txtDescription.ForeColor = System.Drawing.Color.Black;
+            this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDescription.Location = new System.Drawing.Point(250, 293);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDescription.MinimumSize = new System.Drawing.Size(349, 60);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.PlaceholderText = "";
+            this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDescription.SelectedText = "";
+            this.txtDescription.Size = new System.Drawing.Size(633, 107);
+            this.txtDescription.TabIndex = 24;
+            // 
+            // Addcategory
+            // 
+            this.Addcategory.BorderRadius = 20;
+            this.Addcategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Addcategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Addcategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Addcategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Addcategory.FillColor = System.Drawing.Color.SaddleBrown;
+            this.Addcategory.Font = new System.Drawing.Font("TA Chailai", 12F, System.Drawing.FontStyle.Bold);
+            this.Addcategory.ForeColor = System.Drawing.Color.White;
+            this.Addcategory.Location = new System.Drawing.Point(706, 173);
+            this.Addcategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Addcategory.Name = "Addcategory";
+            this.Addcategory.Size = new System.Drawing.Size(155, 47);
+            this.Addcategory.TabIndex = 25;
+            this.Addcategory.Text = "เพิ่มหมวดหมู่สินค้า";
+            this.Addcategory.Click += new System.EventHandler(this.Addcategory_Click);
+            // 
+            // btnDeleteCategory
+            // 
+            this.btnDeleteCategory.BorderRadius = 20;
+            this.btnDeleteCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeleteCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDeleteCategory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDeleteCategory.Font = new System.Drawing.Font("TA Chailai", 12F, System.Drawing.FontStyle.Bold);
+            this.btnDeleteCategory.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnDeleteCategory.Location = new System.Drawing.Point(873, 173);
+            this.btnDeleteCategory.Name = "btnDeleteCategory";
+            this.btnDeleteCategory.Size = new System.Drawing.Size(155, 50);
+            this.btnDeleteCategory.TabIndex = 26;
+            this.btnDeleteCategory.Text = "ลบหมวดหมู่";
+            this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
+            // 
+            // pictureBoxProduct
+            // 
+            this.pictureBoxProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxProduct.ImageRotate = 0F;
+            this.pictureBoxProduct.Location = new System.Drawing.Point(1110, 173);
+            this.pictureBoxProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxProduct.Name = "pictureBoxProduct";
+            this.pictureBoxProduct.Size = new System.Drawing.Size(208, 214);
+            this.pictureBoxProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxProduct.TabIndex = 20;
+            this.pictureBoxProduct.TabStop = false;
+            this.pictureBoxProduct.Click += new System.EventHandler(this.pictureBoxProduct_Click);
+            // 
+            // ProductPage
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.ClientSize = new System.Drawing.Size(1556, 900);
+            this.Controls.Add(this.btnDeleteCategory);
+            this.Controls.Add(this.Addcategory);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtProductId);
+            this.Controls.Add(this.lblProductId);
+            this.Controls.Add(this.pictureBoxProduct);
+            this.Controls.Add(this.btnSelectImage);
+            this.Controls.Add(this.lblStock);
+            this.Controls.Add(this.lblCategory);
+            this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.dataGridProducts);
+            this.Controls.Add(this.txtStock);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.cmbCategory);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.ds);
+            this.Controls.Add(this.btnDeleteProduct);
+            this.Controls.Add(this.btnEditProduct);
+            this.Controls.Add(this.btnAddProduct);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "ProductPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ProductPage";
+            this.Load += new System.EventHandler(this.ProductPage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+        private Guna.UI2.WinForms.Guna2Button btnAddProduct;
+        private Guna.UI2.WinForms.Guna2Button btnEditProduct;
+        private Guna.UI2.WinForms.Guna2Button btnDeleteProduct;
+        private Guna.UI2.WinForms.Guna2HtmlLabel ds;
+        private Guna.UI2.WinForms.Guna2TextBox txtName;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbCategory;
+        private Guna.UI2.WinForms.Guna2TextBox txtPrice;
+        private Guna.UI2.WinForms.Guna2TextBox txtStock;
+        private Guna.UI2.WinForms.Guna2DataGridView dataGridProducts;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label lblCategory;
+        private System.Windows.Forms.Label lblStock;
+        private Guna.UI2.WinForms.Guna2Button btnSelectImage;
+        private Guna.UI2.WinForms.Guna2PictureBox pictureBoxProduct;
+        private System.Windows.Forms.Label lblProductId;
+        private Guna.UI2.WinForms.Guna2TextBox txtProductId;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2TextBox txtDescription;
+        private Guna.UI2.WinForms.Guna2Button Addcategory;
+        private Guna.UI2.WinForms.Guna2Button btnDeleteCategory;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+    }
+}
